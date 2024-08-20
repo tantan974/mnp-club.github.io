@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Curiosity Chronicles</title>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+          }
+    
+          #events-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+    
+          #events-table th, #events-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+          }
+    
+          #events-table th {
+            background-color: #8B4513;
+            color: white;
+          }
+    
+          #events-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+    
+          #events-table tr:hover {
+            background-color: #ddd;
+          }
+    
+          #events-table td a {
+            text-decoration: none;
+            color: #8B4513;
+          }
+    
+          #events-table td a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+  <body>
+    <div id="navbar"></div>
+    <script>
+        document.getElementById('navbar').innerHTML = '<object type="text/html" data="navbar.html" width="1000"></object>';
+    </script>
+    <div id="logo">
+      <a id="innerimginside" href="index.html"><img src="images/mnp-logo.png" id="innerimg"></a>
+      <img src="images/home_mnp.png" id="topcoverimg">
+    </div>
+    
+    <table id="events-table">
+      <tr>
+        <th>Event</th>
+        <th>Information</th>
+      </tr>
+      <tr>
+        <td><a href="quarantinetalks.html">Quarantine Talks</a></td>
+        <td>Online sessions covering various topics in maths and physics during quarantine.</td>
+      </tr>
+      <tr>
+        <td><a href="blogs/maxwell.html">James Maxwell</a></td>
+        <td>Celebrating James Clerk Maxwell's groundbreaking contributions to electromagnetism and his revolutionary unification of electricity, magnetism, and light, which laid the foundation for modern technological advancements.</td>
+      </tr>
+      <tr>
+        <td><a href="blogs/turing.html">Alan Turing</a></td>
+        <td>Alan Turing's pioneering work in computation, code-breaking, and artificial intelligence, from cracking the Enigma code to laying the groundwork for modern computer science, has left an indelible mark on technology and history, despite the tragic injustice he faced.</td>
+      </tr>
+      <tr>
+        <td><a href="blogs/conveners.html">MnP Mission</a></td>
+        <td>Exploring the deeper purpose of the Maths and Physics Club, from its fun activities to its vital role in fostering a love for scientific understanding and its broader impact on STEM fields and beyond.</td>
+      </tr>
+    </table>
+
+    <hr>
+    <div id="footer">
+      <span>
+        © 2024 Maths And Physics Club.
+      </span>
+    </div>
+    <div id="footer2">
+      <div id="social-icons">
+        <a class="icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src="images/facebook.png"></a>
+        <a class="icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src="images/instagram.png"></a>
+        <a class="icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src="images/github.png"></a>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

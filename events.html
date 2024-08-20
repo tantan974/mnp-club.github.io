@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Curiosity Chronicles</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #events-table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #events-table th, #events-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      #events-table th {
+        background-color: #8B4513;
+        color: white;
+      }
+
+      #events-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      #events-table th:nth-child(1), /* For Event column */
+        #events-table td:nth-child(1) {
+        width: 40%; /* Adjust width as needed */
+        }
+
+        #events-table th:nth-child(2), /* For Date column */
+        #events-table td:nth-child(2) {
+        width: 20%; /* Adjust width as needed */
+        }
+
+        #events-table th:nth-child(3), /* For Information column */
+        #events-table td:nth-child(3) {
+        width: 40%; /* Adjust width as needed */
+     }
+
+
+      #events-table tr:hover {
+        background-color: #ddd;
+      }
+
+      #events-table td a {
+        text-decoration: none;
+        color: #8B4513;
+      }
+
+      #events-table td a:hover {
+        text-decoration: underline;
+      }
+    </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script>
+      document.getElementById('navbar').innerHTML = '<object type="text/html" data="navbar.html" width="1000"></object>';
+  </script>
+  <div id="logo">
+    <a id="innerimginside" href="index.html"><img src="images/mnp-logo.png" id="innerimg"></a>
+    <img src="images/home_mnp.png" id="topcoverimg">
+  </div>
+
+  <table id="events-table">
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td><a href="events/talk_qic.html">Talk - Quantum Technology</a></td>
+      <td>2024-08-21</td> <!-- Add the actual date here -->
+      <td>Talk by Sai Vinjanampathy on Quantum Technology</td>
+    </tr>
+    <tr>
+      <td><a href="events/ls_group_theory.html">Learners' Space - Group Theory</a></td>
+      <td>2024-09-01</td> <!-- Add the actual date here -->
+      <td>Learners' Space Course on Group Theory</td>
+    </tr>
+    <tr>
+      <td><a href="events/ls_proofwriting_tcs.html">Learners' Space - Proofwriting in Mathematics and Theoretical Computer Science</a></td>
+      <td>2024-09-15</td> <!-- Add the actual date here -->
+      <td>Learners' Space Course on Proofwriting in Mathematics and Theoretical Computer Science</td>
+    </tr>
+    <tr>
+        <td><a href="events/LogicGC 2019.html">Logic GC 2019</a></td>
+        <td>2019-10-14</td>
+        <td>Logic General Championship</td>
+    </tr>
+    <tr>
+        <td><a href="events/Mathathon 2019.html">Mathathon 2019</a></td>
+        <td>2019-10-03</td>
+        <td>Institute-Wide Math Olympiad</td>
+    </tr>
+    <tr>
+        <td><a href="events/Physics Detective 2019.html">Physics Detective 2019</a></td>
+        <td>2019-09-29</td>
+        <td>Physics Exhibition</td>
+    </tr>
+    <tr>
+        <td><a href="events/Bazinga! Physics 2019.html">Bazinga! Physics 2019</a></td>
+        <td>2019-08-24</td>
+        <td>Flagship Physics Quiz offered by the Math and Physics Club</td>
+    </tr>
+    <tr>
+        <td><a href="events/Bazinga! Maths 2019.html">Bazinga! Maths 2019</a></td>
+        <td>2019-08-23</td>
+        <td>Flagship Maths Quiz offered by the Math and Physics Club</td>
+    </tr>
+
+  </table>
+
+  <hr>
+  <div id="footer">
+    <span>
+      © 2024 Maths And Physics Club.
+    </span>
+  </div>
+  <div id="footer2">
+    <div id="social-icons">
+      <a class="icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src="images/facebook.png"></a>
+      <a class="icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src="images/instagram.png"></a>
+      <a class="icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src="images/github.png"></a>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+</html>
