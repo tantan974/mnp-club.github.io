@@ -10,20 +10,14 @@
   </head>
     <body>
 
-        <div id = "nav-top">
-            <div id = "black-cont">
-                <a href = "../about.html" class = "topic">ABOUT</a>
-                <!-- <a href = "../blog.html" class = "topic">BLOG</a> -->
-                <a href = "../chronicles.html" class = "topic">CHRONICLES</a>
-                <a href = "../events.html" class = "topic">EVENTS</a>
-                <a href = "../sos.html" class = "topic">SOS</a>
-                <a href = "../teampage.html" class = "topic">TEAM</a>
-            </div>
-        </div>
-        <div id = "logo">
-            <a id = "innerimginside" href="index.html"><img src="../images/mnp-logo.png" id = "innerimg"></a>
-            <img src="../images/home_mnp.png" id = "topcoverimg">
-        </div>
+    <div id="navbar"></div>
+    <script>
+        document.getElementById('navbar').innerHTML = '<object type="text/html" data="/navbar.html" width="1000"></object>';
+    </script>
+    <div id="logo">
+      <a id="innerimginside" href="index.html"><img src="/images/mnp-logo.png" id="innerimg"></a>
+      <img src="/images/home_mnp.png" id="topcoverimg">
+    </div>
         
     </div>
     <div id = "titlecontent">

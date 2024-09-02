@@ -1,0 +1,355 @@
+<!-- This is a simple UI for the Jeopardy round of Bazinga, the flagship quizzing competition of Maths and Physics Club, IIT Bombay. The UI is built using HTML, CSS and JavaScript. The UI is designed to be used on a projector screen, with the host controlling the board using a laptop. The host can click on a cell to reveal the question, and click on the question to reveal the answer.
+There are 6 categories, each with 3 questions of increasing difficulty. Each question can be opened exactly once. The host can click on a cell to reveal the question, and click on the answer button to reveal the answer. The host can then click next to go back to the board and select another question.
+The app can be run by opening the `index.html` file in a browser. -->
+<html>
+<head>
+    <title>Jeopardy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            height: 100vh;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .cell.answered {
+            background-color: #ddd;
+        }
+
+        .cell:hover {
+            background-color: #ddd;
+        }
+
+        .question-safety {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(0, 44%, 29%);
+            color: white;
+            font-size: 3vw;
+            /* padding: 20px; */
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            text-align: center;
+            flex-flow: row wrap;
+        }
+
+        .question {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(0, 44%, 29%);
+            color: white;
+            font-size: 2vw;
+            /* padding: 20px; */
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            text-align: center;
+            flex-flow: row wrap;
+        }
+
+        .question-text {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .answer-safety {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: hwb(107 4% 78%);
+            color: white;
+            font-size: 3vw;
+            /* padding: 20px; */
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            text-align: center;
+            flex-flow: row wrap;
+        }
+
+        .answer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: hwb(107 4% 78%);
+            color: white;
+            font-size: 3vw;
+            /* padding: 20px; */
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            text-align: center;
+            flex-flow: row wrap;
+        }
+
+        .answer-text {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .answer button {
+            background-color: #f0f0f0;
+            color: black;
+            font-size: 1em;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .answer button:hover {
+            background-color: #ddd;
+        }
+
+        .line-break {
+            width: 100%;
+        }
+    </style>
+    <script>
+        const categories = [
+            'Classical Mechanics',
+            'Modern Physics',
+            'Electromagnetism and Optics',
+            'Thermodynamics',
+            'Fluid Mechanics',
+            'Trivia'
+        ];
+
+        const questions = [
+            [ // Classical Mechanics - easy to hard
+                { question: `<div class="question-text">At what height will a throwing angle of 30 degrees (with horizontal) achieve the maximum possible projectile range from a point? Assume the velocity of projection to be 20 m/s.</div>`, answer: `<div class="answer-text">10 m</div>`},
+                { question: `<image src="quadcopter.png" height="500px" class="center-image"><div class="question-text">A quadcopter has four propellers, they are as shown, at the four corners of a square. Suppose this  quadcopter is stationary in air,  now if this quadcopter is to be rotated by 90 degrees around vertical axis(yaw) as shown, then a simple idea is to use horizontal propellers which push air in horizontal direction and help us rotate around vertical axis, but that is not feasible, and that’s not what happens in quadcopters (they can only push air in vertical direction). Explain how to rotate it around the vertical axis by just modifying the rotation somehow of the four vertical propellers, without the need of any horizontal propellers?</div>`, answer: `<div class="answer-text">Initially all four propellers are in clockwise direction, now rotate two of the propellers at opposite corners in clockwise direction, and other two propellers at the other pair of opposite corners in anticlockwise direction . To conserve the total angular momentum the quadcopter rotates around the vertical axis.</div>`},
+                { question: `<image src="JM_Classical_mechanics.png" height="500px" class="center-image"><div class="question-text">One end of a rope of length L of uniform mass per unit length equal to k is fixed to the wall at point A, and the other end is pulled by a horizontal force F as shown in the figure such that the rope is in equilibrium. Find the horizontal length x as asked in the figure. (acceleration due to gravity = g )</div>`, answer: `<image src="JM_Classical_mechanics_answer.png" height="500px" class="center-image"><div class="answer-text"></div>`}
+            ],
+            [ // Modern Physics - easy to hard
+                { question: `<image src="yukawa.png" height="500px" class="center-image"><div class="question-text">Have you ever wondered how a helium nucleus would look from inside in our universe? How is repulsive electromagnetic force balanced in this tiny region?  It is balanced due to the presence of a strong nuclear force, which is a short range force, theorised by Hideki Yukawa. This also explains the reason behind more neutrons than protons in our universe. Let's imagine an alternate universe, where there is no strong nuclear force (Yukawa never existed!) and due to its absence, the mass of proton is equal to the mass of neutron. Here, helium nucleus structure is as shown. What should be the value of universal gravitational constant in this universe, such that this nuclear configuration remains conserved? Consider mass to charge ratio of proton in this universe to be as  3*10^4 .</div>`, answer: `<div class="answer-text">10/(1+2root2)</div>`},
+                { question: `<image src="strtest1.png" height="500px" class="center-image"><image src="strtest2.png" height="500px" class="center-image"><div class="question-text">The gentlemen in left are Joseph C. Hafele and Richard E. Keating. Which groundbreaking theory were they testing with their famous experiment, depicted in right?</div>`, answer: `<image src="strtest1.png" height="500px" class="center-image"><image src="strtest2.png" height="500px" class="center-image">
+                <div class="answer-text">Time Dilation/STR</div>`},
+                { question: `<image src="Modernphy_hard.png" height="500px" class="center-image"><div class="question-text">What principle is this comic strip talking about?</div>`, answer: `<image src="Modernphy_hard.png" height="500px" class="center-image"><div class="answer-text">Planck's quantization</div>`},
+            ],
+            [ // Electromagnetism and Optics - easy to hard
+                { question: `<div class="question-text">The phenomenon of electron transfer has become a cornerstone in modern technology, especially in how we interact with electronic devices on a daily basis. This process is central to various components that enable touchscreens, sensors, and other interfaces to function. Can you name the circuit component that plays a key role in these devices?</div>`, answer: `<div class="answer-text">Capacitor</div>`},
+                { question: `<image src="XKCD_faraday.png" height="500px" class="center-image"><div class="line-break"></div><div class="question-text"> FITB (7,4) </div>`, answer: `<image src="XKCD_faraday_answer.png" height="500px" class="center-image"><div class="line-break"><div class="answer-text">Faraday Cage</div>`},
+                { question: `<div class="question-text">Metamaterials are engineered structures smaller than the wavelengths of light, designed to exhibit unique electromagnetic properties that influence how they interact with electromagnetic fields. In 2006, David Smith from Duke University advanced a concept originally proposed by English theoretical physicist John Pendry, creating a metamaterial that could manipulate microwave flow. This metamaterial was composed of concentric rings with electronic microwave distorters that, when activated, redirected frequency-specific microwaves around the material's centre. Which device from the world of Harry Potter could these metamaterials potentially bring to life in the near future?</div>`, answer: `<div class="answer-text">Invisibility Cloak</div>` }
+            ],
+            [ // Thermodynamics - easy to hard
+                { question: `<div class="question-text">If we leave a fridge open in a closed room, what will happen to the temperature of the room and why?</div>`, answer: `<div class="answer-text">It gets warmer. Second Law of Thermodynamics</div>`},
+                { question: `<video height="500px" controls><source src="leidenfrost.webm" type="video/webm"></video>
+                <div class="question-text">This is a common behaviour of water, but it is quite surprising. Explain the physics behind it.</div>`, answer: `<video height="500px" controls><source src="leidenfrost.webm" type="video/webm"></video>
+                <div class="answer-text">This is the Leidenfrost Effect.<div class="line-break"></div>
+                A liquid, when near a surface that's much hotter than its boiling point, forms an insulating vapour layer. This vapour layer prevents the liquid from boiling away quickly, causing droplets to hover above the surface instead of touching it. This effect showcases the surprising behaviour of liquids under extreme heat.</div>`},
+                { question: `<div class="question-text">A magnifying glass when used to focus sunlight in an small spot becomes a burning glass or solar collector. If the lens is made larger and/or if the focus is made more concentrated, the hot spot gets hotter. Could a lens be made bigger and bigger, or could its focus be made more and more concentrated, so that its hot spot would be hotter than the sun itself?<div class="line-break"></div>
+                a) There is no limit on how hot the spot can get.<div class="line-break"></div>
+                b) The spot cannot be made hotter than the sun's surface.<div class="line-break"></div>
+                c)The spot can never be made anywhere near the temperature of the sun's
+                surface.<div class="line-break"></div>
+                d) If several lenses were used, a spot can be made hotter than the sun's
+                surface.<div class="line-break"></div></div>`, answer: `<div class="answer-text">b) The spot cannot be made hotter than the sun's surface.</div>`}
+            ],
+            [ // Fluid Mechanics - easy to hard
+                { question: `<div class="question-text">"Trade winds", also known as "Easterlies", are winds that blow from east to west just north and south of the equator all year round. "El Niño" is a famous global climate phenomenon that occurs over the tropical Pacific Ocean. It is associated, among other things, with a weakening of the tropical Pacific trade winds, and also with a strengthening of the mid-latitude westerlies. How does El Niño affect the Earth's rotation rate?</div>`, answer: `<div class="answer-text">Decreases the rotation rate (very very slightly) since angular momentum is conserved</div>`},
+                { question: `<image src="vangogh1.jpg" height="500px" class="center-image"><image src="vangogh2.jpg" height="500px" class="center-image">
+                <div class="question-text">These Van Gogh paintings are artistic, aren\'t they? Now a natural question is, what's Van Gogh is doing in a physics quiz!?<br>In the above paintings, there's a recurring depiction of a phenomenon that remains an unsolved problem in classical physics. This artistic representation captures the chaotic and unpredictable behaviour of fluids, which classical theories struggle to fully describe. What is this phenomenon?</div>`, answer: `<image src="vangogh1.jpg" height="500px" class="center-image"><image src="vangogh2.jpg" height="500px" class="center-image"><div class='line-break'></div>
+                <div class="answer-text">Turbulence</div>`},
+                { question: `<video height="500px" controls><source src="dolphin.mp4" type="video/mp4"></video>
+                <div class="question-text">Dolphins are known to be playful animals. One of their favourite activities include puffing a rapid burst of air with their mouth into the water, forming a donut-shaped ring. Explain the formation of this ring.</div>`, answer: `<video height="500px" controls><source src="dolphin.mp4" type="video/mp4"></video>
+                <div class="answer-text">These are underwater vortex rings. Air on edges slows down due to friction, while air in centre moves faster than the air around the edges. This causes air around the edges to curl around. Then the air reaches back and gets drawn into the faster moving current at the centre.</div>`}
+            ],
+            [ // Trivia - easy to hard
+                { question: `<div class="question-text">The ____ _____ is a hypothetical scenario for the ultimate fate of the universe, in which the expansion of the universe eventually reverses and the universe recollapses, ultimately causing the cosmic scale factor to reach zero, an event potentially followed by a reformation of the universe starting with another Big Bang. The vast majority of evidence indicates that this hypothesis is not correct. Instead, astronomical observations show that the expansion of the universe is accelerating rather than being slowed by gravity, suggesting that a Big Freeze is more likely. However, some physicists have proposed that a "_____ _____-style" event could result from a dark energy fluctuation.</div>`, answer: `<div class="answer-text">Big Crunch / Gnab Gib</div>`},
+                { question: `<image src="ITER.png" height="500px" class="center-image">
+                <div class="question-text">Fusion powers the Sun and stars, where hydrogen nuclei fuse under immense heat and gravity to form helium, releasing vast amounts of energy. In the lab, scientists have found that the most efficient fusion reaction involves the hydrogen isotopes deuterium (D) and tritium (T), as it achieves the highest energy gain at relatively "low" temperatures. Named after the Latin word for "The Journey," this groundbreaking energy project in South France is constructing the largest magnetic fusion device ever built. The energy output of this device depends on the number of fusion reactions occurring in its core.<br>Can you name this monumental fusion project?</div>`, answer: `<image src="ITER.png" height="500px" class="center-image"><div class='line-break'></div>
+                <div class="answer-text">ITER</div>`},
+                { question: `<div class="question-text">Physicists are great, indeed!<br>X is a Poland-born, Jewish Nobel laureate, famous for his discovery of Nuclear Magnetic Resonance, the science behind MRI. He developed the X-equation for the modified Stern Gerlach experiment to predict properties of atomic nuclei. X was an instrumental figure on the Manhattan Project and in the establishment of Brookhaven Laboratory. He was also part of the controversial security hearing of the Atomic Energy Commission of the United States. <br>If you have eyeballed Oppenheimer or know David Krumholtz by any chance, this question is surely not a miss!</div>`, answer: `<div class="answer-text">Isidor Isaac Rabi</div>`}
+            ]
+        ];
+
+        let currentCategory = -1;
+        let currentQuestion = -1;
+        let answered = Array(6).fill(0).map(() => Array(3).fill(false));
+        // answered[0][1] = true;
+        // answered[2][2] = true;
+        // answered[5][0] = true;
+        let question_difficulty = ["Easy", "Medium", "Hard"];
+        let answered_order = [];
+        let redo_list = [];
+
+        function showQuestionSafety(category, question) {
+            if (answered[category][question]) {
+                return;
+            }
+            currentCategory = category;
+            currentQuestion = question;
+            document.querySelector('.question-safety').style.display = 'flex';
+            document.querySelector('.question-safety').innerHTML = `Safety Slide`;
+        }
+
+        function showQuestion() {
+            if (answered[currentCategory][currentQuestion]) {
+                return;
+            }
+            if (event.clientX < window.innerWidth / 2) {
+                document.querySelector('.question-safety').style.display = 'none';
+                return;
+            }
+            document.querySelector('.question-safety').style.display = 'none';
+            document.querySelector('.question').style.display = 'flex';
+            document.querySelector('.question').innerHTML = questions[currentCategory][currentQuestion].question;
+        }
+
+        function showAnswerSafety() {
+            if (answered[currentCategory][currentQuestion]) {
+                return;
+            }
+            if (event.clientX < window.innerWidth / 2) {
+                document.querySelector('.question').style.display = 'none';
+                document.querySelector('.question-safety').style.display = 'flex';
+                return;
+            }
+            document.querySelector('.question').style.display = 'none';
+            document.querySelector('.answer-safety').style.display = 'flex';
+            document.querySelector('.answer-safety').innerHTML = `Safety Slide`;
+        }
+
+        function showAnswer() {
+            // go back to board if user clicked on left side of the screen
+            if (event.clientX < window.innerWidth / 2) {
+                document.querySelector('.answer-safety').style.display = 'none';
+                document.querySelector('.question').style.display = 'flex';
+                return;
+            }
+            else{
+                document.querySelector('.answer-safety').style.display = 'none';
+                document.querySelector('.answer').style.display = 'flex';
+                document.querySelector('.answer').innerHTML = questions[currentCategory][currentQuestion].answer;
+            }
+        }
+
+        function next() {
+            // go back to question if user clicked on left side of the screen
+            if (event.clientX < window.innerWidth / 2) {
+                document.querySelector('.answer-safety').style.display = 'flex';
+                document.querySelector('.answer').style.display = 'none';
+                return;
+            }
+            else{
+                document.querySelector('.answer').style.display = 'none';
+                answered[currentCategory][currentQuestion] = true;
+                document.querySelectorAll('.cell')[currentQuestion * 6 + currentCategory + 6].classList.add('answered');
+                answered_order.push([currentCategory, currentQuestion]);
+                redo_list = [];
+                currentCategory = -1;
+                currentQuestion = -1;
+            }
+        }
+
+        function undo() {
+            if (answered_order.length == 0) {
+                return;
+            }
+            const [category, question] = answered_order.pop();
+            answered[category][question] = false;
+            document.querySelectorAll('.cell')[question * 6 + category + 6].classList.remove('answered');
+            redo_list.push([category, question]);
+        }
+
+        function redo() {
+            if (redo_list.length == 0) {
+                return;
+            }
+            const [category, question] = redo_list.pop();
+            answered[category][question] = true;
+            document.querySelectorAll('.cell')[question * 6 + category + 6].classList.add('answered');
+            answered_order.push([category, question]);
+        }
+
+        window.onload = function() {
+            const container = document.querySelector('.container');
+            for (let j = 0; j < 3; j++) {
+                for (let i = 0; i < 6; i++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.innerText = `${question_difficulty[j]}`;
+                    cell.onclick = () => showQuestionSafety(i, j);
+                    container.appendChild(cell);
+                }
+            }
+            // document.querySelectorAll('.cell')[1 * 6 + 0 + 6].innerText = '';
+            // document.querySelectorAll('.cell')[1 * 6 + 0 + 6].classList.add('answered');
+            // document.querySelectorAll('.cell')[2 * 6 + 2 + 6].innerText = '';
+            // document.querySelectorAll('.cell')[2 * 6 + 2 + 6].classList.add('answered');
+            // document.querySelectorAll('.cell')[0 * 6 + 5 + 6].innerText = '';
+            // document.querySelectorAll('.cell')[0 * 6 + 5 + 6].classList.add('answered');
+
+            const question_safety = document.createElement('div');
+            question_safety.className = 'question-safety';
+            question_safety.onclick = showQuestion;
+            document.body.appendChild(question_safety);
+
+            const question = document.createElement('div');
+            question.className = 'question';
+            question.onclick = showAnswerSafety;
+            document.body.appendChild(question);
+
+            const answer_safety = document.createElement('div');
+            answer_safety.className = 'answer-safety';
+            answer_safety.onclick = showAnswer;
+            document.body.appendChild(answer_safety);
+
+            const answer = document.createElement('div');
+            answer.className = 'answer';
+            answer.onclick = next;
+            document.body.appendChild(answer);
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="cell" style="background-color: hsl(0, 44%, 29%); color: white;">Classical Mechanics</div>
+        <div class="cell" style="background-color: hsl(0, 44%, 29%); color: white;">Modern Physics</div>
+        <div class="cell" style="background-color: hsl(0, 44%, 29%); color: white;">Electromagnetism and Optics</div>
+        <div class="cell" style="background-color: hsl(0, 44%, 29%); color: white;">Thermodynamics</div>
+        <div class="cell" style="background-color: hsl(0, 44%, 29%); color: white;">Fluid Mechanics</div>
+        <div class="cell" style="background-color: hsl(0, 44%, 29%); color: white;">Trivia</div>
+    </div>
+    <button onclick="undo()">Undo</button>
+    <button onclick="redo()">Redo</button>
+</body>
+</html>
