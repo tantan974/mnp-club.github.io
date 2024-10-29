@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Talk on Primes</title>
+    <title>Prime Numbers</title>
     <link rel="stylesheet" href="../index.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
     <body>
 
-    <div id="navbar"></div>
-    <script>
-        document.getElementById('navbar').innerHTML = '<object type="text/html" data="/navbar.html" width="1000"></object>';
-    </script>
-    <div id="logo">
-      <a id="innerimginside" href="index.html"><img src="/images/mnp-logo.png" id="innerimg"></a>
-      <img src="/images/home_mnp.png" id="topcoverimg">
-    </div>
+        <div id = "nav-top">
+            <div id = "black-cont">
+                <a href = "../about.html" class = "topic">ABOUT</a>
+                <!-- <a href = "../blog.html" class = "topic">BLOG</a> -->
+                <a href = "../chronicles.html" class = "topic">CHRONICLES</a>
+                <a href = "../events.html" class = "topic">EVENTS</a>
+                <a href = "../sos.html" class = "topic">SOS</a>
+                <a href = "../teampage.html" class = "topic">TEAM</a>
+            </div>
+        </div>
+        <div id = "logo">
+            <a id = "innerimginside" href="index.html"><img src="../images/mnp-logo.png" id = "innerimg"></a>
+            <img src="../images/home_mnp.png" id = "topcoverimg">
+        </div>
         
     </div>
+
     <div id = "titlecontent">
         <div id = "titl">
             Talk on Primes by Prof. Ravi Raghunathan 
@@ -43,8 +50,10 @@
             <br>
             <br>
             <div id="video">
-                <iframe width="780" height="480" src="https://www.youtube.com/embed/P0Coj1oRsuY" title="Talk on Primes by Prof. Ravi Raghunathan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+                <div class="video-responsive">
+                    <iframe src="https://www.youtube.com/embed/P0Coj1oRsuY" title="Talk on Primes by Prof. Ravi Raghunathan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>              
         </div>
         
     </div>
@@ -66,3 +75,4 @@
     </body>
 	<script src="index.js"></script>
 </html>
+
