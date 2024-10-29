@@ -535,12 +535,16 @@ hr {
     color: black;
 }
 
-.video-responsive {
+#content-container {
+    max-width: 800px; /* Set this to the desired maximum width */
+    margin: 0 auto;   /* Center the container */
+  }
+  
+  .video-responsive {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
-    max-width: 100%;
     background: #000;
   }
   
