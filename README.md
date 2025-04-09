@@ -27,3 +27,15 @@ Okay, here's a note summarizing whatever I've managed to do till now. Tried to m
 **Overall:** It's... coming along, Slowly. The dark mode header bug is mocking me(hope no one notices but its hard to miss). But hey, hover effects.
 
 ---
+## Progress till the third (second) commit
+
+**Current Status:**
+*   Finished two additional table based webpages (chronicles and events).
+
+**Process:**
+1.   Updated the stylesheet for tables using pastel-ish, aesthetic colors because the old one didn't pass the vibe check.
+2.   Implemented **even more hover animations**, this time I toyed with increasing the font when user hovers over a table cell, doesn't look that great but works. 
+3.   The dark mode button wasn't converting black font to white for some reason so I fixed that somehow.
+
+**Overall:** I'm confident I'll get this thing finished.
+---
