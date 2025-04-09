@@ -1,63 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Curiosity Chronicles</title>
-        <link rel="stylesheet" href="./index.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
-        <style>
-          body {
-            font-family: Arial, sans-serif;
-          }
-    
-          #events-table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          }
-    
-          #events-table th, #events-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-          }
-    
-          #events-table th {
-            background-color: #8B4513;
-            color: white;
-          }
-    
-          #events-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-          }
-    
-          #events-table tr:hover {
-            background-color: #ddd;
-          }
-    
-          #events-table td a {
-            text-decoration: none;
-            color: #8B4513;
-          }
-    
-          #events-table td a:hover {
-            text-decoration: underline;
-          }
-        </style>
-      </head>
-  <body>
-    <div id="navbar"></div>
-    <script>
-        document.getElementById('navbar').innerHTML = '<object type="text/html" data="navbar.html" width="1000"></object>';
-    </script>
-    <div id="logo">
-      <a id="innerimginside" href="index.html"><img src="images/mnp-logo.png" id="innerimg"></a>
-      <img src="images/home_mnp.png" id="topcoverimg">
-    </div>
-    
+  <head>
+    <script src="butyoudidn'thavetocutmeoff.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chronicles</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+    <body>
+        <header>
+            <div class="container header-container">
+                <div class="logoh">
+                    <img
+                        src="images/MnP_White_with_Name_Transparent.png"
+                        alt="MnP Logo"
+                    />
+                    <h1><span class="latex-italic">Maths</span> and <span class="latex-italic">Physics</span> Club</h1>
+                </div>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul id="menu">
+                        <li><a class ="btn" href="index.html">About</a></li>
+                        <li><a class ="btn" href="chronicles.html">Chronicles</a></li>
+                        <li><a class ="btn" href="events.html">Events</a></li>
+                        <li><a class ="btn" href="gallery.html">Gallery</a></li>
+                        <li><a class ="btn" href="sos.html">SOS</a></li>
+                        <li><a class ="btn" href="teampage.html">Our Team</a></li>
+                        <li>
+                            <button id="invert-button">
+                                <img src="images/dark-theme-icon.png" alt="Invert Colors">
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <table id="events-table">
       <tr>
         <th>Event</th>
@@ -84,20 +69,54 @@
         <td>Exploring the deeper purpose of the Maths and Physics Club, from its fun activities to its vital role in fostering a love for scientific understanding and its broader impact on STEM fields and beyond.</td>
       </tr>
     </table>
-
-    <hr>
-    <div id="footer">
-      <span>
-        © 2024 Maths And Physics Club.
-      </span>
-    </div>
-    <div id="footer2">
-      <div id="social-icons">
-        <a class="icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src="images/facebook.png"></a>
-        <a class="icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src="images/instagram.png"></a>
-        <a class="icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src="images/github.png"></a>
+    <section id="about" class="about">
+      <div class="container">
+          <div class="about-content">
+              <div class="about-image">
+                  <img
+                      src="images/MnP_White_with_Name_Transparent.png"
+                      alt="MnP Logo"
+                  />
+              </div>
+          </div>
       </div>
-    </div>
-  </body>
-  <script src="index.js"></script>
+  </section>
+  <hr>
+  <footer>
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-column">
+                  <h3>Maths and Physics Club</h3>
+                  <p>
+                      Insert some cool paragraph about physics
+                  </p>
+              </div>
+              <div class="footer-column">
+                  <h3>Quick Links</h3>
+                  <ul>
+                      <li><a href="index.html">About</a></li>
+                      <li><a href="chronicles.html">Chronicles</a></li>
+                      <li><a href="events.html">Events</a></li>
+                      <li><a href="gallery.html">Gallery</a></li>
+                      <li><a href="sos.html">SOS</a></li>
+                      <li><a href="teampage.html">Our Team</a></li>
+                  </ul>
+              </div>
+              <div class="footer-column">
+                  <h3>Connect With Us</h3>
+                  <ul>
+                      <li><a class = "icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src = "images/facebook.png"></a></li>
+                      <li><a class = "icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src = "images/instagram.png"></a></li>
+                      <li><a class = "icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src = "images/github.png"></a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p class="copyright">
+                  © 2024 Maths And Physics Club.
+              </p>
+          </div>
+      </div>
+  </footer>
+</body>
 </html>

@@ -251,7 +251,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     gap: 60px;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 77px;
 }
 
 .about-box {
@@ -541,9 +541,8 @@ footer {
 }
 
 .footer-column ul li .icon::after {
-/* content: attr(title); */
     position: absolute;
-    top: -35px; /* Adjust position above the icon */
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #0064B0;
@@ -557,20 +556,70 @@ footer {
 }
 
 .footer-column ul li .icon:hover::after {
-    opacity: 1; /* Tooltip becomes visible on hover */
+    opacity: 1;
 }
 
-/* #footer{
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: .875rem;
-    line-height: 1.7142857143;
-    font-style: italic;
-    color: #555;
-} */
+#events-table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #1e1c17;
+    border-radius: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#events-table th {
+    background-color: #142428;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #30363d;
+    font-size: 2.5rem;
+}
+
+#events-table td {
+    color: #ffffff;
+    padding: 20px;
+    border: 1px solid #30363d;
+}
+
+#events-table tr {
+    height: 130px;
+}
+
+#events-table tr:nth-child(odd):not(:first-child) {
+    background-color: #151317;
+}
+
+#events-table tr:nth-child(even):not(:first-child) {
+    background-color: #1e1c17;
+}
+
+#events-table th:hover {
+    box-shadow: 0 0 15px rgba(229, 251, 142, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+    z-index: 1;
+}
+
+#events-table td:hover {
+    font-size: 1.05rem;
+    box-shadow: 0 0 15px rgba(229, 251, 142, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
+    z-index: 1;
+}
+
+#events-table a {
+    color: #7fe0f8;
+    text-decoration: none;
+}
+
+#events-table a:hover {
+    text-decoration: underline;
+    color: #7f91f8;
+}
 
 hr {
     width: 100%;
