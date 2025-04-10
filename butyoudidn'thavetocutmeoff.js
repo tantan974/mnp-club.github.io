@@ -63,9 +63,64 @@ document.addEventListener("DOMContentLoaded", function () {
             body.style.backgroundColor = "#000000";
             body.style.color = "#ffffff";
         }
+        
     }
     toggleInvert(); //toggling the inverter by default because for some reason when the default dark mode page loads first it doesn't work but when I invert twice it works, so I decided to switch to light mode on startup by default so that both dark and light modes work.
     invertButton.addEventListener("click", function () {
         toggleInvert();
     });
+
+    const slider = document.querySelector('.gallery-slider');
+                const slides = document.querySelectorAll('.gallery-slide');
+                const dotsContainer = document.querySelector('.slider-dots');
+                const dots = document.querySelectorAll('.slider-dot');
+                const prevBtn = document.querySelector('.slider-control.prev');
+                const nextBtn = document.querySelector('.slider-control.next');
+                
+                let currentIndex = 0;
+                const slideCount = slides.length;
+                
+                function goToSlide(index) {
+                    if (index < 0) {                            
+                        index = slideCount - 1;
+                    } else if (index >= slideCount) {
+                        index = 0;
+                    }
+                    
+                    currentIndex = index;
+                    const translateValue = -currentIndex * 100 + '%';
+                    slider.style.transform = 'translateX(' + translateValue + ')';
+                    
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[currentIndex].classList.add('active');
+                }
+                
+                prevBtn.addEventListener('click', () => {
+                    goToSlide(currentIndex - 1);
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    goToSlide(currentIndex + 1);
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                    });
+                });
+                
+                let slideInterval = setInterval(() => {
+                    goToSlide(currentIndex + 1);
+                }, 5000);
+                
+                const galleryContainer = document.querySelector('.gallery-container');
+                galleryContainer.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                });
+                
+                galleryContainer.addEventListener('mouseleave', () => {
+                    slideInterval = setInterval(() => {
+                        goToSlide(currentIndex + 1);
+                    }, 5000);
+                });
 });
