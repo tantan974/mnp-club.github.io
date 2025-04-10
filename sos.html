@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="butyoudidn'thavetocutmeoff.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,86 +10,169 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
     <body>
-
-        <div id="navbar"></div>
-        <script>
-            document.getElementById('navbar').innerHTML = '<object type="text/html" data="navbar.html" width="1000"></object>';
-        </script>
-        
-        <div id = "logo">
-            <a id = "innerimginside" href="index.html"><img src="images/mnp-logo.png" id = "innerimg"></a>
-            <img src="images/home_mnp.png" id = "topcoverimg">
-        </div>
-        <div id = "titlecontent">
-            <div id = "titl">
-                Summer of Science
-            </div>
-            <div id = "content">
-                Summer of Science is an initiative by the Maths and Physics Club to encourage and help discover the joy of learning.
-                <br/>
-                <br/>
-                <div id = "center"><h2>Summer of Science Past Projects</h2></div>
-                <div id = "soscontent">
-                    <a href = "sos_list/sos_2023.html" id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "images/sos/main/sos2023.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            2023
-                            <br>
-                            From discovering the first "Einstein tile" to creation of superheavy isotope O-28, 2023 has been memorable. Check out the scientific memories created by our members.
-                        </div>
-                    </a>
-			        <a href = "sos_list/sos_2022.html" id = "soshref2">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "images/sos/main/sos2022.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            2022
-                            <br>
-                            Be it finding intricate fractal by embedding ellipsoids into Hirzebruch surfaces or solving the interpolation problem, take a look at what the students found interesting! 
-                        </div>
-                    </a>
-			        <a href = "sos_list/sos_2021.html" id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "images/sos/main/sos2021.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            2021
-                            <br>
-                            Despite being locked up in homes students showcased their love for science, check out the diligently compiled reports.
-                        </div>
-                    </a>
-                    <a href = "sos_list/sos_2020.html" id = "soshref2">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "images/sos/main/sos2020.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            2020
-                            <br>
-                            With over 120 mentors and 430 mentees, we had an overwhelming response. Check out what fascinated our members the most.
-                        </div>
-                    </a>
+        <header>
+            <div class="container header-container">
+                <div class="logoh">
+                    <img
+                        src="images/MnP_White_with_Name_Transparent.png"
+                        alt="MnP Logo"
+                    />
+                    <h1><span class="latex-italic">Maths</span> and <span class="latex-italic">Physics</span> Club</h1>
                 </div>
-                <br/>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul id="menu">
+                        <li><a class ="btn" href="index.html">About</a></li>
+                        <li><a class ="btn" href="chronicles.html">Chronicles</a></li>
+                        <li><a class ="btn" href="events.html">Events</a></li>
+                        <li><a class ="btn" href="gallery.html">Gallery</a></li>
+                        <li><a class ="btn" href="sos.html">SOS</a></li>
+                        <li><a class ="btn" href="teampage.html">Our Team</a></li>
+                        <li>
+                            <button id="invert-button">
+                                <img src="images/dark-theme-icon.png" alt="Invert Colors">
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-
-
+        </header>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <br>
+                    <h2>Summer of Science</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-box-container">
+                        <div class="about-box">
+                            <h3 class="about-column-title">What is it?</h3>
+                            <div class="about-text">
+                                <p class="typewriter-text">
+                                    Summer of Science is an initiative by the Maths and Physics Club to encourage and help discover the joy of learning.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-box">
+                            <h3 class="about-column-title">Past projects</h3>
+                            <section id="events" class="events">
+                                <div class="container">
+                                    <div class="event-cards">
+                                        <!-- Event Card 1 -->
+                                        <div class="event-card">
+                                            <div
+                                                class="event-image"
+                                                style="
+                                                    background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRUVFRUVFIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNTAiIGZpbGw9IiMyMTg4ZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxwYXRoIGQ9Ik0xMjAgODBMMTgwIDEyMCIgc3Ryb2tlPSIjMjE4OGZmIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTEyMCAxMjBMMTgwIDgwIiBzdHJva2U9IiMyMTg4ZmYiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=&quot;);
+                                                "
+                                            ></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">
+                                                    2023
+                                                </h3>
+                                                <p class="event-description">
+                                                    From discovering the first "Einstein tile" to creation of superheavy isotope O-28, 2023 has been memorable. Check out the scientific memories created by our members.
+                                                </p>
+                                                <a href="sos_list/sos_2023.html" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Event Card 2 -->
+                                        <div class="event-card">
+                                            <div
+                                                class="event-image"
+                                                style="
+                                                    background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRUVFRUVFIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMzAiIGZpbGw9IiMyMTg4ZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEwMCIgcj0iMzAiIGZpbGw9IiMyMTg4ZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxwYXRoIGQ9Ik0xMDAgMTAwTDIwMCAxMDAiIHN0cm9rZT0iIzIxODhmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPg==&quot;);
+                                                "
+                                            ></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">
+                                                    2022
+                                                </h3>
+                                                <p class="event-description">
+                                                    Be it finding intricate fractal by embedding ellipsoids into Hirzebruch surfaces or solving the interpolation problem, take a look at what the students found interesting! 
+                                                </p>
+                                                <a href="sos_list/sos_2022.html" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Event Card 3 -->
+                                        <div class="event-card">
+                                            <div
+                                                class="event-image"
+                                                style="
+                                                    background-image: url(&quot;data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRUVFRUVFIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IiMyMTg4ZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CjxwYXRoIGQ9Ik0xNTAgNjBMMTUwIDE0MCIgc3Ryb2tlPSIjMjE4OGZmIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTExMCAxMDBMMTkwIDEwMCIgc3Ryb2tlPSIjMjE4OGZmIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+&quot;);
+                                                "
+                                            ></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">2021</h3>
+                                                <p class="event-description">
+                                                    Despite being locked up in homes students showcased their love for science, check out the diligently compiled reports.
+                                                </p>
+                                                <a href="sos_list/sos_2021.html" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Event Card 4 -->
+                                        <div class="event-card">
+                                            <div class="event-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjVGNURDIi8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNDUiIGZpbGw9IiM4QjQ1MTMiIGZpbGwtb3BhY2l0eT0iMC4xIi8+CjxwYXRoIGQ9Ik0xMDAgMTUwTDIwMCAxNTAiIHN0cm9rZT0iIzhCNDUxMyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xMDAgMTIwTDIwMCAxMjAiIHN0cm9rZT0iIzhCNDUxMyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xMDAgOTBMMjAwIDkwIiBzdHJva2U9IiM4QjQ1MTMiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMTAwIDYwTDIwMCA2MCIgc3Ryb2tlPSIjOEI0NTEzIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+');"></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">2020<h3>
+                                                <p class="event-description">With over 120 mentors and 430 mentees, we had an overwhelming response. Check out what fascinated our members the most.</p>
+                                                <a href="sos_list/sos_2020.html" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img
+                            src="images/MnP_White_with_Name_Transparent.png"
+                            alt="MnP Logo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
         <hr>
-        <div id = "footer">
-            <span>
-                © 2024 Maths And Physics Club.
-            </span>
-        </div>
-        <div id = "footer2">
-            <div id="social-icons">
-                <a class = "icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src = "images/facebook.png"></a>
-                <a class = "icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src = "images/instagram.png"></a>
-                <a class = "icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src = "images/github.png"></a>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Maths and Physics Club</h3>
+                        <p>
+                            Insert some cool paragraph about physics
+                        </p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">About</a></li>
+                            <li><a href="chronicles.html">Chronicles</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="sos.html">SOS</a></li>
+                            <li><a href="teampage.html">Our Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul>
+                            <li><a class = "icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src = "images/facebook.png"></a></li>
+                            <li><a class = "icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src = "images/instagram.png"></a></li>
+                            <li><a class = "icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src = "images/github.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">
+                        © 2024 Maths And Physics Club.
+                    </p>
+                </div>
             </div>
-        </div>
-
+        </footer>
     </body>
-	<script src="index.js"></script>
 </html>

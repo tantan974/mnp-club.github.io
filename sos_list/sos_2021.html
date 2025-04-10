@@ -1,142 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="../butyoudidn'thavetocutmeoff.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SoS 2021</title>
     <link rel="stylesheet" href="../index.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
   </head>
     <body>
-
-        <div id="navbar"></div>
-        <script>
-            document.getElementById('navbar').innerHTML = '<object type="text/html" data="navbar.html" width="1000"></object>';
-        </script>
-        
-        <div id = "logo">
-            <a id = "innerimginside" href="../index.html"><img src="../images/mnp-logo.png" id = "innerimg"></a>
-            <img src="../images/home_mnp.png" id = "topcoverimg">
-        </div>
-        <div id = "titlecontent">
-            <div id = "titl">
-                Summer of Science 2021
-            </div>
-            <div id = "content">
-                Summer of Science is an initiative by the Maths and Physics Club to encourage and help discover the joy of learning. 
-                <br/>
-                <br/>
-                <div id = "center"><h2>Summer of Science Projects 2021</h2></div>
-                <div id = "soscontent">
-                    <!--Physics-->
-                    <a href="https://drive.google.com/file/d/1TUdAVbLOZEetblwNCfQOGiivKtkhy6aj/view?usp=drive_link">
-                    <div id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "../images/sos/21/21p.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            <div id = "centertext">
-                                <b>Nanomaterials</b>
-                                <br>
-                                Tanirika Roy attempts to establish relationships from production to uses of nanomaterials in the modern era
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-
-
-
-                    <!--Maths1-->
-                    <a href="https://drive.google.com/file/d/14dhr_gPM-ehDcgAxI5gyQ0Gt8QyDgTQI/view?usp=drive_link">
-                    <div id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "../images/sos/21/21m.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            <div id = "centertext">
-                                <b>Topology Optimisation using Finite Element Method Based on Optimality Criteria </b>        
-                                <br>
-                                The conventional topology optimization formulation uses a finite element method (FEM) to evaluate the design performance. In this report Manthan N. Dhisale has explored and given his valuable insights on the same.
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                   
-
-
-
-                    <!--CS-->
-                    <a href="https://drive.google.com/file/d/1RG6qu4KOcegCqIW7XcVwPmfJIYoYU4ao/view?usp=drive_link">
-                    <div id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "../images/sos/21/21cs.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            <div id = "centertext">
-                                <b>Data Structures and Algorithms</b>        
-                                <br>
-                                A well planned out Algorithm is the key to creating successful computer programs. Yuvraj Singh explores various algorithms and the data structures used to implement them so as to excel in competitive programming.
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-
-
-
-
-                    <!--finance/ trading-->
-                    <a href="https://drive.google.com/file/d/1WA1DrOr-q6mvhU3Q-GrHMQY5VXdfLq0a/view?usp=drive_link">
-                    <div id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "../images/sos/21/21f.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            <div id = "centertext">
-                                <b>Stock Market Analysis</b>        
-                                <br>
-                                In this report, Siddharth Anand tries to find out how to gain huge profits in stock market analysis with a minimum level of new learnings  
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-
-                    
-                    <!--other-->
-                    <a href="https://drive.google.com/file/d/14iA4QTq0b6_D006RyLDF399ZDZ1CTz02/view?usp=drive_link">
-                    <div id = "soshref">
-                        <div id = "sosimage">
-                            <img id = "sosimg" src = "../images/sos/21/21o.jpg"/>
-                        </div>
-                        <div id = "sostext">
-                            <div id = "centertext">
-                                <b>Breast Cancer Diagnosis Using Random Forest Algorithm</b>        
-                                <br>
-                                Random forests or random decision forests are an ensemble learning method for classification,Abhijeet Ramshankar Saroj found Breast Cancer Diagnosis Using Random Forest Algorithm.
-                            </div>
-                        </div>
-                    </div>
-                    </a>
+        <header>
+            <div class="container header-container">
+                <div class="logoh">
+                    <img
+                        src="../images/MnP_White_with_Name_Transparent.png"
+                        alt="MnP Logo"
+                    />
+                    <h1><span class="latex-italic">Maths</span> and <span class="latex-italic">Physics</span> Club</h1>
                 </div>
-                <br/>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul id="menu">
+                        <li><a class ="btn" href="../index.html">About</a></li>
+                        <li><a class ="btn" href="../chronicles.html">Chronicles</a></li>
+                        <li><a class ="btn" href="../events.html">Events</a></li>
+                        <li><a class ="btn" href="../gallery.html">Gallery</a></li>
+                        <li><a class ="btn" href="../sos.html">SOS</a></li>
+                        <li><a class ="btn" href="../teampage.html">Our Team</a></li>
+                        <li>
+                            <button id="invert-button">
+                                <img src="../images/dark-theme-icon.png" alt="Invert Colors">
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-
+        </header>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <br>
+                    <h2>Summer of Science 2021</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-box-container">
+                        <div class="about-box">
+                            <h3 class="about-column-title">What is it?</h3>
+                            <div class="about-text">
+                                <p class="typewriter-text">
+                                    Summer of Science is an initiative by the Maths and Physics Club to encourage and help discover the joy of learning.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="about-box">
+                            <h3 class="about-column-title">Projects</h3>
+                            <section id="events" class="events">
+                                <div class="container">
+                                    <div class="event-cards">
+                                        <!-- Event Card 1 -->
+                                        <div class="event-card">
+                                            <div class="event-image" style="background-image: url('../images/sos/21/21p.jpg');"></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">Nanomaterials</h3>
+                                                <p class="event-description">
+                                                    Tanirika Roy attempts to establish relationships from production to uses of nanomaterials in the modern era.
+                                                </p>
+                                                <a href="https://drive.google.com/file/d/1TUdAVbLOZEetblwNCfQOGiivKtkhy6aj/view?usp=drive_link" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Event Card 2 -->
+                                        <div class="event-card">
+                                            <div class="event-image" style="background-image: url('../images/sos/21/21m.jpg');"></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">Topology Optimisation using Finite Element Method Based on Optimality Criteria</h3>
+                                                <p class="event-description">
+                                                    The conventional topology optimization formulation uses a finite element method (FEM) to evaluate the design performance. In this report Manthan N. Dhisale has explored and given his valuable insights on the same.
+                                                </p>
+                                                <a href="https://drive.google.com/file/d/14dhr_gPM-ehDcgAxI5gyQ0Gt8QyDgTQI/view?usp=drive_link" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Event Card 3 -->
+                                        <div class="event-card">
+                                            <div class="event-image" style="background-image: url('../images/sos/21/21cs.jpg');"></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">Data Structures and Algorithms</h3>
+                                                <p class="event-description">
+                                                    A well-planned-out algorithm is the key to creating successful computer programs. Yuvraj Singh explores various algorithms and the data structures used to implement them so as to excel in competitive programming.
+                                                </p>
+                                                <a href="https://drive.google.com/file/d/1RG6qu4KOcegCqIW7XcVwPmfJIYoYU4ao/view?usp=drive_link" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Event Card 4 -->
+                                        <div class="event-card">
+                                            <div class="event-image" style="background-image: url('../images/sos/21/21f.jpg');"></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">Stock Market Analysis</h3>
+                                                <p class="event-description">
+                                                    In this report, Siddharth Anand tries to find out how to gain huge profits in stock market analysis with a minimum level of new learnings.
+                                                </p>
+                                                <a href="https://drive.google.com/file/d/1WA1DrOr-q6mvhU3Q-GrHMQY5VXdfLq0a/view?usp=drive_link" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Event Card 5 -->
+                                        <div class="event-card">
+                                            <div class="event-image" style="background-image: url('../images/sos/21/21o.jpg');"></div>
+                                            <div class="event-details">
+                                                <h3 class="event-title">Breast Cancer Diagnosis Using Random Forest Algorithm</h3>
+                                                <p class="event-description">
+                                                    Random forests or random decision forests are an ensemble learning method for classification. Abhijeet Ramshankar Saroj found Breast Cancer Diagnosis Using Random Forest Algorithm.
+                                                </p>
+                                                <a href="https://drive.google.com/file/d/14iA4QTq0b6_D006RyLDF399ZDZ1CTz02/view?usp=drive_link" class="btn">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img
+                            src="../images/MnP_White_with_Name_Transparent.png"
+                            alt="MnP Logo"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
         <hr>
-        <div id = "footer">
-            <span>
-                © 2024 Maths And Physics Club.
-            </span>
-        </div>
-        <div id = "footer2">
-            <div id="social-icons">
-                <a class = "icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src = "../images/facebook.png"></a>
-                <a class = "icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src = "../images/instagram.png"></a>
-                <a class = "icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src = "../images/github.png"></a>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Maths and Physics Club</h3>
+                        <p>
+                            Insert some cool paragraph about physics
+                        </p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../.index.html">About</a></li>
+                            <li><a href="../chronicles.html">Chronicles</a></li>
+                            <li><a href="../events.html">Events</a></li>
+                            <li><a href="../gallery.html">Gallery</a></li>
+                            <li><a href="../sos.html">SOS</a></li>
+                            <li><a href="../teampage.html">Our Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Connect With Us</h3>
+                        <ul>
+                            <li><a class = "icon" href="https://facebook.com/mnpiitb" title="Maths And Physics Club on Facebook" target="_blank"><img class="fa" src = "../images/facebook.png"></a></li>
+                            <li><a class = "icon" href="https://instagram.com/mnpclub.iitb" title="Maths And Physics Club on Instagram" target="_blank"><img class="fa" src = "../images/instagram.png"></a></li>
+                            <li><a class = "icon" href="https://github.com/mnp-club" title="Maths And Physics Club on Github" target="_blank"><img class="fa" src = "../images/github.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">
+                        © 2024 Maths And Physics Club.
+                    </p>
+                </div>
             </div>
-        </div>
-
+        </footer>
     </body>
-	<script src="index.js"></script>
 </html>

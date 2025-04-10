@@ -50,3 +50,19 @@ Okay, here's a note summarizing whatever I've managed to do till now. Tried to m
 3.   Styled the **team page** nicely, and added an *easter egg*. Do check it out!
 
 **Overall:** Almost there.
+
+---
+
+## Progress while doing the SOS page ("Wait what do you mean I was *only* supposed to do the home page?")
+
+**Current Status:**
+*   Apparently I was only supposed to style the Home page and not the entire website. Would’ve been nice to know before I went through all that pain.
+*   At this point I’ve already done all the *main* pages: About, Team, Gallery, Events, Chronicles — so I'm calling it a W.
+
+**Process:**
+1.   Started the SOS page thinking it's just one more to knock out.
+2.   Randomly found out I wasn’t even supposed to do all this in the first place.
+3.   Felt briefly betrayed...
+4.   **Subpages** of Events and Chronicles still exist, but I’ve decided they’re not real. If I don’t click them, they don’t need to be styled.
+
+**Overall:** I'm done, even if I wasn't supposed to be. This is now an art project.
