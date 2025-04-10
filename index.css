@@ -25,6 +25,11 @@
     filter: invert(100%) hue-rotate(180deg); /* Explicitly block inheritance */
 }
 
+.inverted .member-image {
+    will-change: filter;
+    filter: invert(100%) hue-rotate(180deg);
+}
+
 * {
     font-family: "Helvetica Neue", Arial, sans-serif; /* Use a thin sans-serif font */
     font-weight: 300; /* Applies a thinner font weight */
@@ -38,13 +43,13 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background-color: #241b21;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 a {
     color: #7fe0f8;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 }
 
 a:hover {
@@ -127,7 +132,7 @@ nav ul li button {
     border: none; 
     background: none; 
     cursor: pointer; 
-    transition: transform 0.3s ease; 
+    transition: transform 0.4s ease; 
 }
 
 #invert-button img {
@@ -139,13 +144,13 @@ nav ul li button {
 #invert-button img:hover {
     transform: scale(1.1); /* Slight zoom on hover */
     filter: brightness(0) invert(1); /* Keeps the same effect on hover */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+    transition: transform 0.4s ease, filter 0.4s ease; /* Smooth transition */
 }
 
 nav ul li button img{
     width: 50px;
     height: 50px; 
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .btn {
@@ -157,9 +162,9 @@ nav ul li button img{
     text-decoration: none;
     color: #fff;
     background-color: #000;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(33, 136, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .btn:hover {
@@ -170,7 +175,7 @@ nav ul li button img{
 nav ul li a {
     font-weight: bold;
     color: #ffffff;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 }
 
 nav ul li a:hover {
@@ -233,6 +238,7 @@ nav ul li a:hover {
     color: #ffffff;
     position: relative;
     display: inline-block;
+    margin-bottom: 25px;
 }
 
 .section-title h2::after {
@@ -268,7 +274,7 @@ nav ul li a:hover {
     padding: 30px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(33, 136, 255, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 .about-box:nth-child(1) {
     background-color: #1e1c17;
@@ -292,6 +298,10 @@ nav ul li a:hover {
     padding-bottom: 8px;
     position: relative;
     display: inline-block;
+}
+
+.team-box-container .about-column-title{
+    margin-bottom: 25px;
 }
 
 .about-column-title::after {
@@ -350,7 +360,7 @@ nav ul li a:hover {
     width: 100%;
     max-width: 400px;
     border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .about-image img:hover {
@@ -464,7 +474,7 @@ text-decoration: underline; /* Underlines the link on hover */
 
 footer {
     margin-top: 0%;
-    background-color: #171613;
+    background-color: #0c0b0a;
     color: #ffffff;
     padding: 60px 0 20px;
     box-shadow: 0 -5px 15px rgba(33, 136, 255, 0.1);
@@ -510,7 +520,7 @@ footer {
 
 .footer-column ul li a {
     color: var(--light-gray);
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 }
 
 .footer-column ul li a:hover {
@@ -539,7 +549,7 @@ footer {
     height: 30px;
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(255, 236, 33, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .footer-column ul li .icon:hover img {
@@ -559,7 +569,7 @@ footer {
     font-size: 12px;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .footer-column ul li .icon:hover::after {
@@ -607,14 +617,14 @@ footer {
 
 #events-table th:hover {
     box-shadow: 0 0 15px rgba(229, 251, 142, 0.6);
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
     z-index: 1;
 }
 
 #events-table td:hover {
     font-size: 1.05rem;
     box-shadow: 0 0 15px rgba(229, 251, 142, 0.6);
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
     z-index: 1;
 }
 
@@ -653,12 +663,12 @@ footer {
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 20px 20px rgba(31, 31, 23, 0.5);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .gallery-slider {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .gallery-slide {
@@ -673,7 +683,7 @@ footer {
     height: 100%;
     object-fit: cover;
     border-radius: 25px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .slider-controls {
@@ -695,7 +705,7 @@ footer {
     cursor: pointer;
     margin: 0 10px;
     border: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
@@ -717,7 +727,7 @@ footer {
     border-radius: 50%;
     background-color: var(--medium-gray);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     box-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
 }
 .slider-dot:hover {
@@ -737,6 +747,145 @@ footer {
 .slider-control:hover,.slider-dot:hover {
     animation: golden-glow 1.5s infinite;
     transform: scale(1.15);
+}
+
+.team {
+    width: 100%; /* Ensure the parent container is full width */
+    max-width: 1200px; /* Optional: Limits the maximum width */
+    margin: 0 auto; /* Centers the container */
+    padding: 80px 0;
+    background-color: #000000;
+    position: relative;
+}
+
+.team .container {
+    margin-top: 25px;
+}
+
+.team-box-container {
+    margin-top: 1000px;
+    display: block; /* Explicitly set to block */
+    background-color: #1e1c17; /* Same as .about-box */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(33, 136, 255, 0.1);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    width: 100%; /* Ensures full width */
+    max-width: 1200px; /* Optional: Limits the maximum width */
+    margin: 0 auto; /* Centers the container */
+    margin-bottom: 70px;
+}
+
+.team-box-container:hover {
+    box-shadow: 0 0 15px rgba(229, 251, 142, 0.6);
+    transform: translateY(-5px);
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background-color: var(--light-gray);
+
+    transition: transform 0.4s ease;
+    box-shadow: 0 0px 10px rgba(255, 236, 33, 0.2);
+}
+
+.member-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 236, 33, 0.4);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.member-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.member-name:hover {
+    color: #d9df90;
+}
+
+.member-position {
+    color: var(--primary-blue);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--light-gray);
+    transition: color 0.4s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-blue);
+}
+
+.social-links .icon {
+    position: relative;
+    display: inline-block;
+}
+
+.social-links .icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(255, 236, 33, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.social-links .icon:hover img {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(255, 236, 33, 0.4);
+}
+
+.social-links .icon::after {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0064B0;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.social-links .icon:hover::after {
+    opacity: 1;
 }
 
 hr {
